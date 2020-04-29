@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Narendra Sisodiya Latest Resume</title>
+  </head>
+  <body>
+    <h1>Loading</h1>
+    <script>
+      var url =
+        "https://docs.google.com/document/d/1Ng-sL5c7qQ68L-awGbbAduDA1QVOm_JTyEN4NoOHi_0/export?format=pdf";
+
+      function f2() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.onreadystatechange = function () {
+          console.log("here");
+          if (this.readyState === this.DONE) {
+            if (this.status === 200) {
+              var data_url = URL.createObjectURL(this.response);
+              window.location = data_url;
+            }
+          }
+        };
+        xhr.responseType = "blob";
+        xhr.setRequestHeader("referer", "http://www.google.com");
+        xhr.send();
+      }
+      f2();
+    </script>
+  </body>
+</html>
